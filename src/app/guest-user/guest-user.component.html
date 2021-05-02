@@ -1,11 +1,16 @@
 <!-- <mat-toolbar color="primary"> -->
     <h3>Book Library</h3>
   <!-- </mat-toolbar> -->
-  <div class="search-box" *ngIf="bookList">
-    <input matInput type="text" class="search-text" placeholder="Search with book name"[(ngModel)]="searchword"(input)="searchThis(name)">
-    <input matInput type="text" class="search-text" placeholder="Search with author"[(ngModel)]="searchword"(input)="searchThis(author)">
+  <mat-card>
+    <mat-card-content>
+  <div class="search-box">
+    <input matInput type="text" class="search-text" placeholder="Search with book name"[(ngModel)]="searchwordBook"(input)="searchThis('name')">
+    <br><br>
+    <input matInput type="text" class="search-text" placeholder="Search with author"[(ngModel)]="searchwordAuthor"(input)="searchThis('author')">
   </div>
-  <hr>
+</mat-card-content>
+</mat-card> 
+<br/><hr><br/>
   <div class="content">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
       <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let book of bookList">

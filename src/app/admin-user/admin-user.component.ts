@@ -20,5 +20,18 @@ export class AdminUserComponent implements OnInit {
     this.authList = this.authData;
   }
 
-  
+  searchThis() {
+    this.authList = this.authData
+    if (this.searchword) {
+      this.authList = this.authList.filter((ele) => {
+        let arrayelement = ele.author_name.toLowerCase();
+        return arrayelement.includes(this.searchword.toLowerCase());
+      });
+    }
+    else {
+      console.log(this.authList)
+    }
+    console.log(this.searchword)
+    console.log(this.authList)
+  }
 }
