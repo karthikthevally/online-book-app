@@ -1,4 +1,11 @@
     <h2>Author Library</h2>
+    <mat-card>
+      <mat-card-content>
+    <div class="search-box">
+      <input matInput type="text" class="search-text" placeholder="Search author"[(ngModel)]="searchword"(input)="searchThis()">
+    </div>
+      </mat-card-content>
+  </mat-card>  
   <br/><hr><br/>
   <div class="content">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
