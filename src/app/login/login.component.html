@@ -1,0 +1,33 @@
+
+     
+     <mat-card>
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <form [formGroup]="form" (ngSubmit)="onLoginClick()">
+      <mat-card-content>
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field>
+                <input matInput placeholder="Username" type="email" formControlName="username" required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+            <td><mat-form-field>
+              <input matInput placeholder="Password" type="password" formControlName="password" required>
+            </mat-form-field></td>
+          </tr></table>      
+              <p *ngIf="loading && error==null">Loading...</p>
+              <div *ngIf="error">
+                <p>{{ error }}</p>
+              </div>
+        <!-- </form> -->
+        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button type="submit" color="primary" [disabled]="loading">Login</button>
+      </mat-card-actions>
+    </form>
+    </mat-card>

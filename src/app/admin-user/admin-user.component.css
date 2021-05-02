@@ -1,0 +1,14 @@
+.content {
+    padding: 16px;
+}
+
+.auth-name {
+    text-align-last: center;
+}
+.search-box {
+    text-align-last: center;
+}
+.search-box .search-text {
+    margin-left: 5px;
+    margin-right: 5px;
+}

@@ -1,0 +1,25 @@
+    <h2>Author Library</h2>
+  <br/><hr><br/>
+  <div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let author of authList">
+        <mat-card class="mat-elevation-z4">
+
+          <mat-card-content>
+            <div  class="auth-name"> 
+              <p>
+                {{author.author_name}}
+              </p>
+            </div>
+            <p>
+              {{author.about}}
+            </p>
+        </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>

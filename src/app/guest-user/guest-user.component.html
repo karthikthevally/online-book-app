@@ -1,0 +1,34 @@
+<!-- <mat-toolbar color="primary"> -->
+    <h3>Book Library</h3>
+  <!-- </mat-toolbar> -->
+  <div class="search-box" *ngIf="bookList">
+    <input matInput type="text" class="search-text" placeholder="Search with book name"[(ngModel)]="searchword"(input)="searchThis(name)">
+    <input matInput type="text" class="search-text" placeholder="Search with author"[(ngModel)]="searchword"(input)="searchThis(author)">
+  </div>
+  <hr>
+  <div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let book of bookList">
+        <mat-card class="mat-elevation-z4">
+          <img mat-card-image src="{{book.img}}" alt="book cover page image">
+          <mat-card-content>
+            <p>
+              {{book.name}}
+            </p>
+            <hr>
+            <div class="book-details"> 
+              <p>
+                {{book.publish_year}}
+                <br/>
+                Rs {{book.price}}
+              </p>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
